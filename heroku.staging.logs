@@ -1,0 +1,184 @@
+tarun@DESKTOP-CES106Q MINGW64 /f/webDevProjects/reactProj/coda_global/backend_api (master)
+$ git add .
+
+tarun@DESKTOP-CES106Q MINGW64 /f/webDevProjects/reactProj/coda_global/backend_api (master)
+$ git commit -m 'one route changed'
+[master 4c1de9f] one route changed
+ 1 file changed, 29 insertions(+), 42 deletions(-)
+ rewrite routes/search.js (77%)
+
+tarun@DESKTOP-CES106Q MINGW64 /f/webDevProjects/reactProj/coda_global/backend_api (master)
+$ git push heroku master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 594 bytes | 594.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:        NODE_VERBOSE=false
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version 12.x...
+remote:        Downloading and installing node 12.20.0...
+remote:        Using default npm version: 6.14.8
+remote:        
+remote: -----> Restoring cache
+remote:        - node_modules
+remote:
+remote: -----> Installing dependencies
+remote:        Installing node modules
+remote:        
+remote:        > nodemon@2.0.6 postinstall /tmp/build_f2e9d59f/node_modules/nodemon
+remote:        > node bin/postinstall || exit 0
+remote:
+remote:        Love nodemon? You can now support the project via the open collective:
+remote:         > https://opencollective.com/nodemon/donate
+remote:
+remote:        added 201 packages in 3.536s
+remote:        
+remote: -----> Build
+remote:        
+remote: -----> Caching build
+remote:        - node_modules
+remote:        
+remote: -----> Pruning devDependencies
+remote:        audited 201 packages in 1.701s
+remote:        
+remote:        12 packages are looking for funding
+remote:          run `npm fund` for details
+remote:
+remote:        found 0 vulnerabilities
+remote:
+remote:        
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 25M
+remote: -----> Launching...
+remote:        Released v4
+remote:        https://backhackerprem.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/backhackerprem.git
+   cb36e9f..4c1de9f  master -> master
+
+tarun@DESKTOP-CES106Q MINGW64 /f/webDevProjects/reactProj/coda_global/backend_api (master)
+$ heroku logs --tail
+2020-12-12T11:29:12.636460+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=b2795555-4618-42a5-a03f-fc9dd588a7a7 fwd="47.31.16.31" dyno= connect= service= status=502 bytes= protocol=https
+2020-12-12T11:37:33.000000+00:00 app[api]: Build started by user blaze.devworks013@gmail.com
+2020-12-12T11:38:03.158975+00:00 app[api]: Release v3 created by user blaze.devworks013@gmail.com
+2020-12-12T11:38:03.158975+00:00 app[api]: Deploy cb36e9fe by user blaze.devworks013@gmail.com
+2020-12-12T11:38:03.169863+00:00 app[api]: Scaled to web@1:Free by user blaze.devworks013@gmail.com
+2020-12-12T11:38:04.000000+00:00 app[api]: Build succeeded
+2020-12-12T11:38:08.879856+00:00 heroku[web.1]: Starting process with command `node app.js`
+2020-12-12T11:38:11.345057+00:00 app[web.1]: Server running at port no: 21034
+2020-12-12T11:38:11.750612+00:00 heroku[web.1]: State changed from starting to up
+2020-12-12T11:38:12.974984+00:00 app[web.1]: Connected to MongoDB
+2020-12-12T11:38:15.561348+00:00 heroku[router]: at=info method=GET path="/" host=backhackerprem.herokuapp.com request_id=c4962fa1-721b-427a-bf9a-c0e61dfe6b7d fwd="47.31.16.31" 
+dyno=web.1 connect=3ms service=14ms status=200 bytes=245 protocol=https
+2020-12-12T11:38:17.645339+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=backhackerprem.herokuapp.com request_id=b1e7bb07-e824-43a7-b5b2-37aedba93413 fwd="47.31.16.31" dyno=web.1 connect=3ms service=8ms status=404 bytes=426 protocol=https
+2020-12-12T11:38:23.589248+00:00 heroku[router]: at=info method=GET path="/team" host=backhackerprem.herokuapp.com request_id=2a0b2c66-be0f-4463-b95d-3316b1bc9571 fwd="47.31.16.31" dyno=web.1 connect=2ms service=3ms status=200 bytes=245 protocol=https
+2020-12-12T11:38:30.497079+00:00 heroku[router]: at=info method=GET path="/match" host=backhackerprem.herokuapp.com request_id=cdf32e9a-de01-4d5b-bbe7-36b414a0604f fwd="47.31.16.31" dyno=web.1 connect=1ms service=2ms status=200 bytes=254 protocol=https
+2020-12-12T11:38:44.958901+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=47cf104c-ee0a-4851-a238-450c6ccf680a fwd="47.31.16.31" dyno=web.1 connect=3ms service=651ms status=200 bytes=48341 protocol=https
+2020-12-12T11:42:02.635748+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=3ef02651-6923-44e1-a65d-e07f12a601a2 fwd="47.31.16.31" dyno=web.1 connect=3ms service=635ms status=200 bytes=48341 protocol=https
+2020-12-12T11:42:25.035142+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=795abe06-558f-47c6-abd2-061a8adeacd3 fwd="47.31.16.31" dyno=web.1 connect=4ms service=567ms status=304 bytes=184 protocol=https
+2020-12-12T11:42:58.787947+00:00 heroku[router]: at=info method=OPTIONS path="/team/createTeam" host=backhackerprem.herokuapp.com request_id=6607ab59-d1c7-47a4-8ee4-248fb2d800ba fwd="47.31.47.246" dyno=web.1 connect=2ms service=3ms status=204 bytes=301 protocol=https
+2020-12-12T11:42:59.389056+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=52af25ba-be76-41ef-88ce-575b658b9829 fwd="47.31.16.31" dyno=web.1 connect=4ms service=592ms status=200 bytes=48247 protocol=https
+2020-12-12T11:42:59.517571+00:00 heroku[router]: at=info method=POST path="/team/createTeam" host=backhackerprem.herokuapp.com request_id=f702be4d-f046-4e07-bc16-aac551dcf43b fwd="47.31.47.246" dyno=web.1 connect=1ms service=444ms status=200 bytes=332 protocol=https
+2020-12-12T11:43:09.204265+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=ad25bd6b-3f80-4935-942f-58a8e8e209be fwd="47.31.16.31" dyno=web.1 connect=1ms service=572ms status=200 bytes=48341 protocol=https
+2020-12-12T11:43:25.534344+00:00 heroku[router]: at=info method=GET path="/search/name/Aerified" host=backhackerprem.herokuapp.com request_id=d074aa72-bca9-41d0-bca0-2b289dfabd85 fwd="47.31.16.31" dyno=web.1 connect=1ms service=2ms status=404 bytes=435 protocol=https
+2020-12-12T11:43:44.343523+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=2c6e2698-2160-4b18-ae17-aa5def66216b fwd="47.31.16.31" dyno=web.1 connect=2ms service=570ms status=304 bytes=184 protocol=https
+2020-12-12T11:43:56.919674+00:00 heroku[router]: at=info method=GET path="/search/name/Aerified" host=backhackerprem.herokuapp.com request_id=7bed915c-cde8-46c4-989b-56cd7003b0ea fwd="47.31.16.31" dyno=web.1 connect=5ms service=4ms status=404 bytes=435 protocol=https
+2020-12-12T11:44:31.338293+00:00 heroku[router]: at=info method=GET path="/search/score/2" host=backhackerprem.herokuapp.com request_id=ec0a837a-a28e-498b-b944-5bd1738a8948 fwd="47.31.16.31" dyno=web.1 connect=1ms service=6ms status=404 bytes=429 protocol=https
+2020-12-12T11:48:40.000000+00:00 app[api]: Build started by user blaze.devworks013@gmail.com
+2020-12-12T11:49:09.514843+00:00 app[api]: Release v4 created by user blaze.devworks013@gmail.com
+2020-12-12T11:49:09.514843+00:00 app[api]: Deploy 4c1de9f4 by user blaze.devworks013@gmail.com
+2020-12-12T11:49:10.000000+00:00 app[api]: Build succeeded
+2020-12-12T11:49:10.823493+00:00 heroku[web.1]: Restarting
+2020-12-12T11:49:10.828010+00:00 heroku[web.1]: State changed from up to starting
+2020-12-12T11:49:11.876644+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2020-12-12T11:49:11.983866+00:00 heroku[web.1]: Process exited with status 143
+2020-12-12T11:49:13.557931+00:00 heroku[web.1]: Starting process with command `node app.js`
+2020-12-12T11:49:16.585865+00:00 app[web.1]: Server running at port no: 54246
+2020-12-12T11:49:16.698293+00:00 heroku[web.1]: State changed from starting to up
+2020-12-12T11:49:18.270781+00:00 app[web.1]: Connected to MongoDB
+2020-12-12T11:49:42.696744+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=d7c5d811-4fce-4999-81a4-9c3c17bb6fcf fwd="47.31.47.246" dyno=web.1 connect=1ms service=752ms status=200 bytes=48341 protocol=https
+2020-12-12T11:49:58.559256+00:00 heroku[router]: at=info method=GET path="/search/score/2" host=backhackerprem.herokuapp.com request_id=4543613a-1bf0-4dbe-bf76-8186d2ae3899 fwd="47.31.16.31" dyno=web.1 connect=1ms service=165ms status=200 bytes=239 protocol=https
+2020-12-12T11:51:15.384800+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=ad57d166-c4b6-40e5-a5ee-8e2180ccabb3 fwd="47.31.47.246" dyno=web.1 connect=0ms service=743ms status=304 bytes=184 protocol=https
+2020-12-12T11:51:21.070122+00:00 heroku[router]: at=info method=GET path="/search/name/A_rex" host=backhackerprem.herokuapp.com request_id=2a968c23-36f1-4db1-85b9-ed2da95f4638 fwd="47.31.47.246" dyno=web.1 connect=0ms service=168ms status=200 bytes=334 protocol=https
+2020-12-12T11:51:32.866618+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=62628c13-6928-479c-84c6-86e074f1db95 fwd="47.31.16.31" dyno=web.1 connect=0ms service=594ms status=304 bytes=184 protocol=https
+2020-12-12T11:51:52.236303+00:00 heroku[router]: at=info method=OPTIONS path="/match/team1/5fd4acc36cab64000467148d&5fd4a9ca73b06444996c7bae" host=backhackerprem.herokuapp.com request_id=6aebe9d9-af80-4490-a2bf-4febde38620c fwd="47.31.47.246" dyno=web.1 connect=1ms service=2ms status=204 bytes=257 protocol=https
+2020-12-12T11:51:52.728657+00:00 heroku[router]: at=info method=PATCH path="/match/team1/5fd4acc36cab64000467148d&5fd4a9ca73b06444996c7bae" host=backhackerprem.herokuapp.com request_id=4856e709-c426-4a50-812e-7509f05b5b64 fwd="47.31.47.246" dyno=web.1 connect=2ms service=180ms status=200 bytes=526 protocol=https
+2020-12-12T11:51:52.894964+00:00 app[web.1]: (node:4) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+2020-12-12T11:51:52.894974+00:00 app[web.1]: at ServerResponse.setHeader (_http_outgoing.js:530:11)
+2020-12-12T11:51:52.894975+00:00 app[web.1]: at ServerResponse.header (/app/node_modules/express/lib/response.js:771:10)
+2020-12-12T11:51:52.894976+00:00 app[web.1]: at ServerResponse.send (/app/node_modules/express/lib/response.js:170:12)
+2020-12-12T11:51:52.894976+00:00 app[web.1]: at ServerResponse.json (/app/node_modules/express/lib/response.js:267:15)
+2020-12-12T11:51:52.894978+00:00 app[web.1]: at /app/routes/match.js:16:7
+2020-12-12T11:51:52.894978+00:00 app[web.1]: at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2020-12-12T11:51:52.895136+00:00 app[web.1]: (node:4) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async 
+function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+2020-12-12T11:51:52.895246+00:00 app[web.1]: (node:4) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+2020-12-12T11:51:53.588535+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=0ae9a463-1ebc-461e-8569-7bffe6a8fc5b fwd="47.31.47.246" dyno=web.1 connect=1ms service=640ms status=200 bytes=48341 protocol=https
+2020-12-12T11:53:03.596530+00:00 heroku[router]: at=info method=OPTIONS path="/match/team1/5fd4acc36cab64000467148d&5fd4a9ca73b06444996c79bc" host=backhackerprem.herokuapp.com request_id=1367c7e9-8fd1-414e-a135-d738e8f43b9e fwd="47.31.47.246" dyno=web.1 connect=2ms service=3ms status=204 bytes=257 protocol=https
+2020-12-12T11:53:03.987706+00:00 heroku[router]: at=info method=PATCH path="/match/team1/5fd4acc36cab64000467148d&5fd4a9ca73b06444996c79bc" host=backhackerprem.herokuapp.com request_id=71ec6c82-d94c-4aa5-9d34-894bb800f265 fwd="47.31.47.246" dyno=web.1 connect=1ms service=175ms status=200 bytes=526 protocol=https
+2020-12-12T11:53:04.150915+00:00 app[web.1]: (node:4) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+2020-12-12T11:53:04.150926+00:00 app[web.1]: at ServerResponse.setHeader (_http_outgoing.js:530:11)
+2020-12-12T11:53:04.150926+00:00 app[web.1]: at ServerResponse.header (/app/node_modules/express/lib/response.js:771:10)
+2020-12-12T11:53:04.150927+00:00 app[web.1]: at ServerResponse.send (/app/node_modules/express/lib/response.js:170:12)
+2020-12-12T11:53:04.150927+00:00 app[web.1]: at ServerResponse.json (/app/node_modules/express/lib/response.js:267:15)
+2020-12-12T11:53:04.150928+00:00 app[web.1]: at /app/routes/match.js:16:7
+2020-12-12T11:53:04.150928+00:00 app[web.1]: at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2020-12-12T11:53:04.151019+00:00 app[web.1]: (node:4) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async 
+function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+2020-12-12T11:53:04.926162+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=e1fac9e3-d407-491b-a58c-9fe3ad74b6d5 fwd="47.31.47.246" dyno=web.1 connect=2ms service=612ms status=200 bytes=48341 protocol=https
+2020-12-12T11:56:02.176130+00:00 heroku[router]: at=info method=GET path="/search/name/d" host=backhackerprem.herokuapp.com request_id=dda34ecf-3bb1-46df-8d91-b800a4ec3438 fwd="47.31.47.246" dyno=web.1 connect=0ms service=163ms status=200 bytes=239 protocol=https
+2020-12-12T11:56:14.387415+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=f40f6537-8bfa-47c5-b209-9dc19598e348 fwd="47.31.47.246" dyno=web.1 connect=0ms service=6ms status=404 bytes=428 protocol=https
+2020-12-12T11:57:37.239590+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=b76202a7-16e0-463a-90bd-ebfbb4799d27 fwd="47.31.47.246" dyno=web.1 connect=5ms service=684ms status=200 bytes=48341 protocol=https
+2020-12-12T11:57:42.882810+00:00 heroku[router]: at=info method=GET path="/search/name/d" host=backhackerprem.herokuapp.com request_id=ed8011b2-d786-4e6d-ae58-1bd3fcf535d3 fwd="47.31.47.246" dyno=web.1 connect=3ms service=166ms status=304 bytes=181 protocol=https
+2020-12-12T11:58:50.851610+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=bcd43700-9292-4d91-bf25-cb1572fb2ff6 fwd="47.31.16.31" dyno=web.1 connect=1ms service=4ms status=404 bytes=428 protocol=https
+2020-12-12T12:01:21.241821+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=50f956f9-bd67-4027-840f-c55c3783d616 fwd="47.31.16.31" dyno=web.1 connect=1ms service=2ms status=404 bytes=428 protocol=https
+2020-12-12T12:01:28.642191+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=f2502f3e-aaf5-4a87-920b-453c3c44c9c2 fwd="47.31.16.31" dyno=web.1 connect=3ms service=561ms status=304 bytes=184 protocol=https
+2020-12-12T12:01:32.904457+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=5285f02f-1788-42e1-8988-c6f13993767a fwd="47.31.16.31" dyno=web.1 connect=5ms service=2ms status=404 bytes=428 protocol=https
+2020-12-12T12:02:32.898003+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=78154b49-041e-42b0-b314-9b9a29817f22 fwd="47.31.16.31" dyno=web.1 connect=2ms service=547ms status=304 bytes=184 protocol=https
+2020-12-12T12:02:35.271045+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=fb57b605-7699-47dd-bd26-2a08101b980c fwd="47.31.16.31" dyno=web.1 connect=1ms service=2ms status=404 bytes=428 protocol=https
+2020-12-12T12:07:49.876693+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=2c685102-5ea7-4428-91ef-e6c1ac4d94fa fwd="47.31.16.31" dyno=web.1 connect=1ms service=574ms status=304 bytes=184 protocol=https
+2020-12-12T12:07:52.349634+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=8c7e49ee-488b-4a62-abc8-baa387f86fa1 fwd="47.31.16.31" dyno=web.1 connect=1ms service=3ms status=404 bytes=428 protocol=https
+2020-12-12T12:08:19.037307+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=cdb77653-1e1a-43be-9ea6-e011efeccd27 fwd="47.31.16.31" dyno=web.1 connect=1ms service=615ms status=304 bytes=184 protocol=https
+2020-12-12T12:08:25.837180+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=3694211d-839c-4e65-89f8-c96e17e34076 fwd="47.31.16.31" dyno=web.1 connect=2ms service=559ms status=304 bytes=184 protocol=https
+2020-12-12T12:10:29.493070+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=0c813108-c082-4238-94e1-6a35b54e96e6 fwd="47.31.47.246" dyno=web.1 connect=6ms service=673ms status=304 bytes=184 protocol=https
+2020-12-12T12:10:34.151774+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=f9403ea6-4f90-4530-aff9-b3178dc588dd fwd="47.31.47.246" dyno=web.1 connect=1ms service=556ms status=304 bytes=184 protocol=https
+2020-12-12T12:11:18.706477+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=cd17bed2-d395-4e3a-8bdb-7ca6d5a86cd0 fwd="47.31.47.246" dyno=web.1 connect=6ms service=2ms status=404 bytes=428 protocol=https
+2020-12-12T12:14:37.563525+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=19a6ea85-b484-40ff-a97d-1ab2bbca6e73 fwd="47.31.47.246" dyno=web.1 connect=1ms service=4ms status=404 bytes=428 protocol=https
+2020-12-12T12:14:44.481909+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=c1c1e9be-dd7f-4b19-bc23-10124093913c fwd="47.31.47.246" dyno=web.1 connect=2ms service=580ms status=304 bytes=184 protocol=https
+2020-12-12T12:14:53.352854+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=15ef7cb2-fcf3-4cae-b2bf-558bf8fe2956 fwd="47.31.47.246" dyno=web.1 connect=2ms service=3ms status=404 bytes=428 protocol=https
+2020-12-12T12:17:53.494405+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=70c21d92-1f26-415e-be4a-9f4de88319e1 fwd="47.31.16.31" dyno=web.1 connect=0ms service=3ms status=404 bytes=428 protocol=https
+2020-12-12T12:18:36.677794+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=f33648a4-8874-4a2a-9ddd-3ef30d2fa805 fwd="47.31.16.31" dyno=web.1 connect=4ms service=2ms status=404 bytes=428 protocol=https
+2020-12-12T12:19:45.937633+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=3262bf9e-b909-4f46-97a4-8b605c0cafa1 fwd="47.31.16.31" dyno=web.1 connect=4ms service=566ms status=304 bytes=184 protocol=https
+2020-12-12T12:19:51.656540+00:00 heroku[router]: at=info method=GET path="/search/score/6" host=backhackerprem.herokuapp.com request_id=89e1cea9-ec99-4f55-85b4-44811b81c61a fwd="47.31.16.31" dyno=web.1 connect=4ms service=164ms status=200 bytes=334 protocol=https
+2020-12-12T12:19:56.146016+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=bddeafb3-c21a-40d6-a392-58814ada8384 fwd="47.31.16.31" dyno=web.1 connect=4ms service=2ms status=404 bytes=428 protocol=https
+2020-12-12T12:22:20.679657+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=d8dc8f29-8fab-4650-ba47-01525838f336 fwd="47.31.47.246" dyno=web.1 connect=1ms service=557ms status=304 bytes=184 protocol=https
+2020-12-12T12:23:19.122535+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=759d2be7-3283-42f5-91c2-b3452763bf15 fwd="47.31.47.246" dyno=web.1 connect=4ms service=6ms status=404 bytes=428 protocol=https
+2020-12-12T12:24:26.756274+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=726ef991-7766-4f8e-a561-cd280646480c fwd="47.31.47.246" dyno=web.1 connect=5ms service=555ms status=304 bytes=184 protocol=https
+2020-12-12T12:24:32.202149+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=80de07d9-4539-4a68-a10b-6d026ef8f5a2 fwd="47.31.47.246" dyno=web.1 connect=2ms service=539ms status=304 bytes=184 protocol=https
+2020-12-12T12:25:19.590855+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=8221928b-c612-4902-816c-b14b3a534340 fwd="47.31.47.246" dyno=web.1 connect=2ms service=545ms status=304 bytes=184 protocol=https
+2020-12-12T12:25:24.829040+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=2478ac1e-65e0-46e7-beef-f08b5408b82e fwd="47.31.47.246" dyno=web.1 connect=0ms service=607ms status=304 bytes=184 protocol=https
+2020-12-12T12:25:27.463655+00:00 heroku[router]: at=info method=GET path="/search/score/" host=backhackerprem.herokuapp.com request_id=10406b0a-fd17-4dfc-82f4-27ce2f341b7a fwd="47.31.47.246" dyno=web.1 connect=1ms service=2ms status=404 bytes=428 protocol=https
+2020-12-12T12:25:31.769705+00:00 heroku[router]: at=info method=GET path="/search/score/6" host=backhackerprem.herokuapp.com request_id=43c2d6e2-47fb-4731-94e0-d8e5130c28d1 fwd="47.31.47.246" dyno=web.1 connect=3ms service=164ms status=304 bytes=182 protocol=https
+2020-12-12T12:25:36.021542+00:00 heroku[router]: at=info method=GET path="/sort/score" host=backhackerprem.herokuapp.com request_id=6445ffbc-12e6-409d-b70f-f5d62246ea33 fwd="47.31.47.246" dyno=web.1 connect=3ms service=597ms status=304 bytes=184 protocol=https
+2020-12-12T12:25:41.776848+00:00 heroku[router]: at=info method=GET path="/sort/name" host=backhackerprem.herokuapp.com request_id=f20cdce9-8d08-405b-9bf7-35c4d5c16df3 fwd="47.31.47.246" dyno=web.1 connect=6ms service=587ms status=304 bytes=184 protocol=https
